@@ -70,7 +70,7 @@ body {
   border-radius: 5px;
   animation: form-anim 1s ease-in forwards;
   width: 100%;
-  height: 160%;
+  height: 130%;
   z-index: 5;
   justify-self: center;
   align-self: center;
@@ -81,9 +81,15 @@ body {
   align-content: center;
 }
 /*CUANDO INSERTES MEDIA QUERIES REDISEÑA TODA LA MAQUETACION*/
-@media (max-width: 400px) {
-  div.item-5 {
-    width: 300%;
+@media screen and (max-width: 990px) {
+  .item-5 {
+    width: 150%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .item-5 {
+    width: 200%;
   }
 }
 
@@ -128,7 +134,7 @@ body {
     transform: translateY(0%);
   }
   100% {
-    transform: translateY(430%);
+    transform: translateY(380%);
     opacity: 1;
   }
 }
