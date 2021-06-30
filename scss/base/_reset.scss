@@ -1,0 +1,30 @@
+@use '../utils/variables' as v;
+@use '../utils/animations' as a;
+@use '../components/buttons' as b;
+@use '../components/input' as i;
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 20px;
+}
+
+body {
+  height: 100vh;
+  background-color: v.$font-color;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "sec-1 sec-1 sec-2"
+    "sec-3 form sec-2"
+    "sec-3 sec-4 sec-4";
+  color: v.$font-color;
+}

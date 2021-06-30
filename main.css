@@ -1,0 +1,208 @@
+/*VARIABLES*/
+.item {
+  position: relative;
+  /*border: 1px solid black;*/
+}
+
+/*ANIMATION SECTION 1*/
+@keyframes sec-1-anim {
+  0% {
+    transform: translate(-150%, -150%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+/*AINMATION SECTION 2*/
+@keyframes sec-2-anim {
+  0% {
+    transform: translate(150%, -150%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+/*ANIMATION FORM*/
+@keyframes form-anim {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/*TTILE ANIMATION*/
+@keyframes title-anim {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(380%);
+    opacity: 1;
+  }
+}
+/*LOGIN ANIMATION*/
+@keyframes login-anim {
+  100% {
+    opacity: 1;
+  }
+}
+/*BOTTOM-LEFT-SECTION*/
+@keyframes sec-3-anim {
+  0% {
+    transform: translate(-150%, 150%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+/*BOTTOM-RIGHT-SECTION*/
+@keyframes sec-4-anim {
+  0% {
+    transform: translate(150%, 150%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+.button {
+  background-color: seagreen;
+  color: #f0f0f0;
+}
+
+.input {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  margin: 10px auto;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 20px;
+}
+
+body {
+  height: 100vh;
+  background-color: #f0f0f0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "sec-1 sec-1 sec-2" "sec-3 form sec-2" "sec-3 sec-4 sec-4";
+  color: #f0f0f0;
+}
+
+/*TOP-LEFT-SECTION*/
+.item-1,
+.item-2 {
+  grid-area: sec-1;
+  background: linear-gradient(to right, #aa4b6b 55%, #6b6b83 80%, #3b8d99 95%);
+  animation: sec-1-anim 1s ease-in forwards;
+}
+
+/*TOP-RIGHT-SECTION*/
+.item-3,
+.item-6 {
+  grid-area: sec-2;
+  background: #3b8d99;
+  animation: sec-2-anim 1s ease-in forwards;
+}
+
+/*FORM SECTION*/
+.item-5 {
+  grid-area: form;
+  background: #21535b;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  width: 100%;
+  height: 130%;
+  z-index: 5;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  animation: form-anim 1s ease-in forwards;
+}
+
+/*MEDIA QUERIES ITEM-5*/
+@media screen and (max-width: 990px) {
+  .item-5 {
+    width: 150%;
+  }
+}
+@media screen and (max-width: 640px) {
+  .item-5 {
+    width: 200%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .item-5 {
+    width: 350%;
+  }
+}
+.form-item {
+  width: 95%;
+}
+
+#title {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#title::before {
+  content: "Sign in to FriendApp";
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.8rem;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
+  position: relative;
+  top: -160px;
+  opacity: 0;
+  animation: title-anim 1s ease-in 1.5s forwards;
+  transition: 1s linear;
+}
+
+#login {
+  height: 55%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  font-family: "Roboto", sans-serif;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
+  animation: login-anim 1s linear 2.5s forwards;
+}
+
+.item-4,
+.item-7 {
+  grid-area: sec-3;
+  background: #aa4b6b;
+  animation: sec-3-anim 1s ease-in forwards;
+}
+
+.item-8,
+.item-9 {
+  grid-area: sec-4;
+  background: linear-gradient(to left, #3b8d99 55%, #6b6b83 80%, #aa4b6b 95%);
+  animation: sec-4-anim 1s ease-in forwards;
+}
+
+/*# sourceMappingURL=main.css.map */
